@@ -4,8 +4,8 @@
 This assignment is about creating a a CRUD data table with javascript & bootstrap.
 
 Main tasks:
-<BR>• Implement already created array of products (javascript object) into the table of products.
-<BR>• Implement already created array of products (javascript object) into the table of products.
+• Implement already created array of products (javascript object) into the table of products.
+• Implement already created array of products (javascript object) into the table of products.
 <!-- <h4>• Implement CRUD<h4>
 <h4>• Add validations <h4>
 <h4>• Implement filtering function <h4>
