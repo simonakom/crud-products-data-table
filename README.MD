@@ -1,7 +1,7 @@
 
 # Data-table of products
 
-This assignment is about creating a CRUD data table with javascript & bootstrap.
+This assignment is about creating a CRUD data table (responsive) with javascript & bootstrap.
 
 Main tasks:
 <br>• Implement already created array of products (javascript object) into the table of products.
