@@ -1,7 +1,3 @@
-// Priega prie kintamuju is scripto "products": console.log (products);
-// JS kodas skirtas atlikti CRUD veiksmams;
-// Produktu atvaizdavimas yra per JS - atvaizduojami html tbody;
-
 // Html elements:
 const dynamicDataElement = document.getElementById("dynamic-data"),
     titleInputElement = document.getElementById("title"),
@@ -39,28 +35,28 @@ filterDiscountElement.onkeyup = filter;
 filterCategoryElement.addEventListener('change', filter);
 
 function filter (){
-let productName = filterNameElement.value.toLowerCase();
-let brandName = filterBrandElement.value.toLowerCase();
-let minPrice = +filterPriceFromElement.value;
-let maxPrice = +filterPriceToElement.value;
-let discountNumber = +filterDiscountElement.value
-let descriptionText =  filterDescriptionElement.value;
-let categoryName = filterCategoryElement.value.toLowerCase();
+    let productName = filterNameElement.value.toLowerCase();
+    let brandName = filterBrandElement.value.toLowerCase();
+    let minPrice = +filterPriceFromElement.value;
+    let maxPrice = +filterPriceToElement.value;
+    let discountNumber = +filterDiscountElement.value
+    let descriptionText =  filterDescriptionElement.value;
+    let categoryName = filterCategoryElement.value.toLowerCase();
 
-let filteredArray = products.filter((product) => product.title.toLowerCase().includes (productName));
-filteredArray = filteredArray.filter((product) => product.brand.toLowerCase().includes (brandName));
-filteredArray = filteredArray.filter ((product) => product.price >= minPrice);
-if (maxPrice !== 0){
-    filteredArray = filteredArray.filter ((product) => product.price <= maxPrice);
-}
-filteredArray = filteredArray.filter ((product) => product.discountPercentage >= discountNumber);
-filteredArray = filteredArray.filter ((product) => product.description.toLowerCase().includes (descriptionText));
-filteredArray = filteredArray.filter ((product) => {
-    return categoryName === 'choose...' || product.category.toLowerCase().includes(categoryName);
-    });
+    let filteredArray = products.filter((product) => product.title.toLowerCase().includes (productName));
+    filteredArray = filteredArray.filter((product) => product.brand.toLowerCase().includes (brandName));
+    filteredArray = filteredArray.filter ((product) => product.price >= minPrice);
+    if (maxPrice !== 0){
+        filteredArray = filteredArray.filter ((product) => product.price <= maxPrice);
+    }
+    filteredArray = filteredArray.filter ((product) => product.discountPercentage >= discountNumber);
+    filteredArray = filteredArray.filter ((product) => product.description.toLowerCase().includes (descriptionText));
+    filteredArray = filteredArray.filter ((product) => {
+        return categoryName === 'choose...' || product.category.toLowerCase().includes(categoryName);
+        });
 
-getTableContents (filteredArray);
-console.log(filteredArray);
+    getTableContents (filteredArray);
+    console.log(filteredArray);
 }
 
 resetFiltersButton.addEventListener('click', refreshPage);
@@ -68,15 +64,15 @@ function refreshPage() {
 location.reload();
 }
 
-// READ - kiekvieno produkto atvaizdavimas lenteleje
+// READ 
 function getTableContents (productsArray) {
     let dynamicHTML = ``;
-// Einamasis vienas objektas "product" imtas is masyvo "products" ir ciklas kartojasi 30kartu
+// The current object "product" is taken from the array "products" and the loop repeats 30 times    
 for (const product of productsArray) {
-    //Yra sukuriamas papildomai delete button (tik cia) ir jam priskiriama delete funkcija. Button duoda nuorodo i button id kuri reikia istrinti. Id lieka unikalus visada.
-    //Yyra sukuriamas papildomai update button (tik cia) ir jam priskiriama setEdit funkcija. Kai nusetinsime editinima kazkuriam produktui - tada visas reiskmes is produkto perkeliamos i imputus.
+    //Additional delete button is created (only here) and assigned the delete function. The button provides a reference to the button id to be deleted. The id remains unique always.
+    //Additional update button is created (only here) and the setEdit function is assigned to it. When we set editing to a product - then all the actions from the product are moved to the inputes.
         dynamicHTML += `<tr>
-            <td onclick="showaModal(${product.id})">${product.id}</td>
+            <td class="productId" onclick="showaModal(${product.id})">${product.id}</td>
             <td>${product.title}</td>
             <td>${product.price}</td>
             <td>${product.stock}</td>
@@ -88,97 +84,242 @@ for (const product of productsArray) {
             </td>
     </tr>`;
 }  
-// ideti ciklo rezultata i html (console.log ([dynamicDataElement]));
-dynamicDataElement.innerHTML = dynamicHTML; //jeigu prideti += tada prisides EXAMPLE eilute
+// enter the result of the cycle into html (console.log ([dynamicDataElement]));
+dynamicDataElement.innerHTML = dynamicHTML; //if add with  += ten "EXAMPLE" row is added
 };
 
-// kad funkcija suveiktu ja reikia iskviesti (yra galimas automatinis funckijos sikvietimas apskliaudus funkcija ir uz jos ribu padejus skliaustelius).
 getTableContents (products);
 
-//MODAL: visas produkto objektas kuris bus tvaizduojamas lange
-const showaModal = (id) =>{
-let elementIndex = products.findIndex((value) => value.id === id); //gausime elemento indeksa (pozicija) masyve,
-const product = products[elementIndex];
+// MODAL
+const showaModal = (id) => {
+    let elementIndex = products.findIndex((value) => value.id === id); //get the index (position) of the element in the array
+    const product = products[elementIndex];
 
-let dynamicHTML = 
-`<div id="modalBody" style="width:100%; height: 100%;"><div style="max-width: 58%; margin: 0 auto">
-<img src="${product.thumbnail}" class="my-3 logoSize rounded-5" alt="Product photo"/>
-<div class="product-details">
-    <div class="row">
-        <span class="col-lg-3 fw-bold">Discount</span>
-        <span class="col-lg-1">${product.discountPercentage}%</span>
+    let dynamicHTML = 
+    `<div id="modalBody" style="width:100%; height: 100%;"><div style="max-width: 58%; margin: 0 auto">
+    <img src="${product.thumbnail}" class="my-3 logoSize rounded-2" alt="Product photo"/>
+    <div class="product-details">
+        <div class="row">
+            <span class="col-lg-3 fw-bold">Discount</span>
+            <span class="col-lg-1">${product.discountPercentage}%</span>
+        </div>
+        <div class="row">
+            <span class="col-lg-3 fw-bold">Rating</span>
+            <span class="col-lg-9">${product.rating} out of 5 </span>
+        </div>
+        <div class="row">
+            <span class="col-lg-3 fw-bold">Description </span>
+            <span class="col-9">${product.description}</span>
+        </div>
     </div>
-    <div class="row">
-        <span class="col-lg-3 fw-bold">Rating</span>
-        <span class="col-lg-9">${product.rating} out of 5 </span>
-    </div>
-    <div class="row">
-        <span class="col-lg-3 fw-bold">Description </span>
-        <span class="col-9">${product.description}</span>
-    </div>
-</div>
 
-    <div class="d-flex align-items-center justify-content-center">
-    <button type="button" class="btn btn-default px-5 my-4" id="submit" onclick="modalElement.close()">Close</button>
-    </div>
-</div></div>`;
+        <div class="d-flex align-items-center justify-content-center">
+        <button type="button" class="btn btn-default px-5 my-4" id="submit" onclick="modalElement.close()">Close</button>
+        </div>
+    </div></div>`;
 
-modalElement.innerHTML = dynamicHTML;
+    modalElement.innerHTML = dynamicHTML;
 
-// Kad paspaudus i background - isijungtu modal langas
-document.querySelector("#modalBody").onclick = (event) => {   // kad butu du ciklai - window/background
-    event.stopPropagation();     //kad neperduotu clicko i bacground 
-    console.log("clicked on modal window")
-}
-modalElement.showModal();
+    //Clicking on the background will open the modal window
+    document.querySelector("#modalBody").onclick = (event) => {   //to have two cycles - window/background
+        event.stopPropagation(); //to prevent the transfer of the click to the background 
+        console.log("clicked on modal window")
+    }
+    modalElement.showModal();
 } 
-//Paspaudus ant modalinio background:
+//Clicking on the modal background:
 modalElement.onclick = () => {
     modalElement.close ();
     console.log ("cliclked on modal element")
 }
 
-
-// CREATE - funkcija sukuria nauja objekta i kuri isides input reiksmes 
+// CREATE 
 const createNewRecord = (event) => {
-//event.PreventDefault - kad puslapis nepersikrautu (dazniausiai naudojama su formomis kai nera nurodytas button type: button, nes tada automatiskai buna submit ir persikrauna)
-event.preventDefault(); //console.log (event);
-    const newProduct = {
-        id: currentId,  //kiekvinas naujas pridetas elementas tures vis didesni id priklausomai nuo paskutnio elemento id.(iki modal prodejimo buvo id: products[products.length - 1].id + 1,)
-        title: titleInputElement.value,
-        description: descriptionElement.value,
-        price: + priceInputElement.value, //kad nebutu stringas
-        discountPercentage: +discountElement.value, //kad nebutu stringas
-        rating: +ratingElement.value,
-        stock: +stockInputElement.value,
-        brand: brandInputElement.value,
-        category: categoryInputElement.value,
-        thumbnail: photoElement.value
+    //event.PreventDefault - to prevent page from reloading (most often used with forms where button type is not specified: buttin,  because then it automatically becomes submit and reloads)
+    event.preventDefault(); //console.log (event);
+        const newProduct = {
+            id: currentId,  //each new element added will have a higher and higher id depending on the id of the last element (until the modal cration id was: products[products.length - 1].id + 1,)
+            title: titleInputElement.value,
+            description: descriptionElement.value,
+            price: + priceInputElement.value, // + convert to numbers
+            discountPercentage: +discountElement.value,
+            rating: +ratingElement.value,
+            stock: +stockInputElement.value,
+            brand: brandInputElement.value,
+            category: categoryInputElement.value,
+            thumbnail: photoElement.value
+        };
+
+        // Get input values for validation:
+        const title = titleInputElement.value;
+        const brand = brandInputElement.value;
+        const price = priceInputElement.value;
+        const stock = stockInputElement.value;
+        const category = categoryInputElement.value;
+        const discountPrecentage = discountElement.value;
+        const rating = ratingElement.value;
+        const thumbnail = photoElement.value;
+        const description = descriptionElement.value;
+        // console.log(title), console.log(price), console.log(stock), console.log(brand), console.log(category)
+
+        // Validations:
+        if (!title || !price || !stock || !brand || !category || !discountPrecentage || !rating || !thumbnail || !description) {
+            addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
+            addResult.style.display = 'block';
+            addResult.style.backgroundColor = '#cf7a847f';
+            return;
+        } else {
+            addResult.style.display = 'none';
+        }
+
+        if (category == '' || category === 'Choose...') {
+            addResult.innerText =  ('Please select a category!');
+            addResult.style.display = 'block';
+            addResult.style.backgroundColor = '#cf7a847f';
+            return;
+        } else {
+            addResult.style.display = 'none';
+        }
+
+        
+    // Validate thumbnail size
+    const thumbnailImg = new Image();
+    thumbnailImg.onload = function () {
+        if (thumbnailImg.width < 600 || thumbnailImg.height < 600 || thumbnailImg.width > 1200 || thumbnailImg.height > 1200) {
+            addResult.innerText = "Thumbnail image must be at least 600x600 px up to 1200x1200px.";
+            addResult.style.display = "block";
+            addResult.style.backgroundColor = "#cf7a847f";
+        } else {
+            // Check for duplicate product
+            const duplicateProduct = products.find(
+                (existingProduct) =>
+                    existingProduct.title.toLowerCase() === newProduct.title.toLowerCase() &&
+                    existingProduct.price === newProduct.price &&
+                    existingProduct.stock === newProduct.stock &&
+                    existingProduct.brand.toLowerCase() === newProduct.brand.toLowerCase() &&
+                    existingProduct.category === newProduct.category &&
+                    existingProduct.discountPercentage === newProduct.discountPercentage &&
+                    existingProduct.rating === newProduct.rating &&
+                    existingProduct.thumbnail === newProduct.thumbnail &&
+                    existingProduct.description === newProduct.description
+            );
+
+            if (duplicateProduct) {
+                addResult.innerText = "A product with the same details already exists!";
+                addResult.style.display = "block";
+                addResult.style.backgroundColor = "#cf7a847f";
+            } else {
+                // Add new product to the "products" array
+                products.push(newProduct);
+                currentId++;
+
+                // Clear inputs
+                titleInputElement.value = "";
+                priceInputElement.value = "";
+                stockInputElement.value = "";
+                brandInputElement.value = "";
+                categoryInputElement.value = "";
+                photoElement.value = "";
+                ratingElement.value = "";
+                discountElement.value = "";
+                descriptionElement.value = "";
+
+                addResult.innerText = "New element has been successfully added!";
+                addResult.style.display = "block";
+                addResult.style.backgroundColor = "#76cd7e7f";
+
+                getTableContents(products);
+            }
+        }
     };
+    thumbnailImg.onerror = function () {
+        addResult.innerText = "Invalid thumbnail image URL.";
+        addResult.style.display = "block";
+        addResult.style.backgroundColor = "#cf7a847f";
+    };
+    thumbnailImg.src = thumbnail;
+};
 
-    // Get input values for validation:
-    const title = titleInputElement.value;
-    const brand = brandInputElement.value;
-    const price = priceInputElement.value;
-    const stock = stockInputElement.value;
-    const category = categoryInputElement.value;
-    const discountPrecentage = discountElement.value;
-    const rating = ratingElement.value;
-    const thumbnail = photoElement.value;
-    const description = descriptionElement.value;
-    // console.log(title), console.log(price), console.log(stock), console.log(brand), console.log(category)
+submitButtonElement.onclick = createNewRecord;
 
-    // Validations:
-    if (!title || !price || !stock || !brand || !category || !discountPrecentage || !rating || !thumbnail || !description) {
-        addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
+// DELETE
+const deleteProduct = (id) => {
+    // Unique/non-repeating ID. to find the location of an item in the array - use findindex. Function("value"- the value of each product): in this function, we search for a product whose id matches the previous id specified in (deleteProducts).
+    let elementIndex = products.findIndex((value)=>value.id === id);
+    // console.log(elementIndex); 
+    products.splice(elementIndex,1);
+
+    addResult.style.display = 'block';
+    addResult.innerText = 'Selected element has been successfully deleted!';
+    addResult.style.backgroundColor = '#76cd7e7f';
+
+    getTableContents (products);
+};
+
+// UPDATE 
+// when we are not in update mode (no button pressed) then it is false. When pressed, the mode changes to "true".
+let editMode = false; 
+let currentProduct;
+
+// Back to Initial state: when the update is complete, revert to the default view
+const updateProduct = (event)=>{
+    event.preventDefault();
+
+    // Check for duplicates before updating
+    const updatedTitle = titleInputElement.value;
+    const updatedPrice = +priceInputElement.value;
+    const updatedStock = +stockInputElement.value;
+    const updatedBrand = brandInputElement.value;
+    const updatedCategory = categoryInputElement.value;
+    const updatedThumbnail = photoElement.value;
+    const updatedRating = +ratingElement.value;
+    const updatedDiscountPrecentage = +discountElement.value;
+    const updatedDescription = descriptionElement.value;
+
+    const duplicateProduct = products.find(
+        (existingProduct) =>
+            existingProduct.id !== currentProduct &&
+            existingProduct.title.toLowerCase() === updatedTitle.toLowerCase() &&
+            existingProduct.price === updatedPrice &&
+            existingProduct.stock === updatedStock &&
+            existingProduct.brand.toLowerCase() === updatedBrand.toLowerCase() &&
+            existingProduct.category === updatedCategory &&
+            existingProduct.thumbnail === updatedThumbnail &&
+            existingProduct.rating === updatedRating &&
+            existingProduct.discountPercentage === updatedDiscountPrecentage &&
+            existingProduct.description === updatedDescription
+    );
+
+    if (duplicateProduct) {
+        addResult.innerText = `A product with the same details already exists!`;
         addResult.style.display = 'block';
         addResult.style.backgroundColor = '#cf7a847f';
         return;
+    }
+
+    // Continue with the update if no duplicates found
+    // value will be same as in input
+    products[currentProduct].title = updatedTitle;
+    products[currentProduct].price = updatedPrice;
+    products[currentProduct].stock = updatedStock;
+    products[currentProduct].brand = updatedBrand;
+    products[currentProduct].category = updatedCategory;
+    products[currentProduct].thumbnail = updatedThumbnail;
+    products[currentProduct].rating = updatedRating;
+    products[currentProduct].discountPercentage = updatedDiscountPrecentage;
+    products[currentProduct].description = updatedDescription;
+
+    // Validations:
+    if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
+    addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
+    addResult.style.display = 'block';
+    addResult.style.backgroundColor = '#cf7a847f';
+    return;
     } else {
         addResult.style.display = 'none';
     }
 
-    if (category == '' || category === 'Choose...') {
+    if (updatedCategory == '' || updatedCategory === 'Choose...') {
         addResult.innerText =  ('Please select a category!');
         addResult.style.display = 'block';
         addResult.style.backgroundColor = '#cf7a847f';
@@ -187,31 +328,13 @@ event.preventDefault(); //console.log (event);
         addResult.style.display = 'none';
     }
 
-    // Validations: Duplicate product check is performed based on product details.
-    const duplicateProduct = products.find((existingProduct) =>
-        existingProduct.title.toLowerCase() === newProduct.title.toLowerCase() &&
-        existingProduct.price === newProduct.price &&
-        existingProduct.stock === newProduct.stock &&
-        existingProduct.brand.toLowerCase() === newProduct.brand.toLowerCase() &&
-        existingProduct.category === newProduct.category &&
-        existingProduct.discountPrecentage === newProduct.discountPrecentage &&
-        existingProduct.rating === newProduct.rating &&
-        existingProduct.thumbnail === newProduct.thumbnail &&
-        existingProduct.description === newProduct.description
-    );
+    currentProduct = undefined;
+    editMode = false; 
+    submitButtonElement.onclick = createNewRecord;
+    submitButtonElement.innerText = 'Submit';
+    submitButtonElement.style.backgroundColor = '#6687b3';
 
-    if (duplicateProduct) {
-    addResult.innerText = `A product with the same details already exists!`;
-    addResult.style.display = 'block';
-    addResult.style.backgroundColor = '#cf7a847f';
-    return;
-    }
-
-    // prie "products" masyvo prideti nauja produkta
-    products.push(newProduct);
-    currentId++;
-
-    // palikti inputus tuscius
+    // blank inputs
     titleInputElement.value = "";
     priceInputElement.value = "";
     stockInputElement.value = "";
@@ -222,143 +345,20 @@ event.preventDefault(); //console.log (event);
     discountElement .value = "";
     descriptionElement .value = "";
 
-    //Pakeisti alert teksta
     addResult.style.display = 'block';
-    addResult.innerText = 'New element has been successfully added!';
-    //kad pakeisti spalva
+    addResult.innerText = 'Selected element has been successfully updated!';
     addResult.style.backgroundColor = '#76cd7e7f';
 
-    // kad table atsinajunitu su naujU elementu, reikia vel iskviesti atvaizdavimo funkcija
     getTableContents (products);
-}; 
-
-// Kai mygtukas yra spaudziamas - issikviecia funkcija
-submitButtonElement.onclick = createNewRecord;
-
-// DELETE - Sukurti nuaja delete button ir istrina elementa pagal jo id(parametras)
-const deleteProduct = (id) => {
-// Unikalus/nesikartojantis ID. kad suzinoti elemento vieta masyve - naudoti findindex. Funkcija("value"- kiekvieno producto reiksme): joje ieskome produkto kurio id atitnka auksciau(deleteProducts) nurodyta id.
-let elementIndex = products.findIndex((value)=>value.id === id);
-// console.log(elementIndex); 
-products.splice(elementIndex,1);
-
-//Pakeisti alert teksta
-addResult.style.display = 'block';
-addResult.innerText = 'Selected element has been successfully deleted!';
-//kad pakeisti spalva
-addResult.style.backgroundColor = '#76cd7e7f';
-
-// kad table atsinajunitu su istrintu elementu, reikia vel iskviesti atvaizdavimo funkcija
-getTableContents (products);
 };
 
-// UPDATE - Sukurti nuaja update button
-// Svarbus prie update: kai neesame update rezime (nepaspaustas mygtukas) tada yra false. Kaip paspaudziam, rezimas keiciasi i "true".
-let editMode = false; 
-let currentProduct;
-
-// Back to Initial state: kai updatinimas bus baigtas, grizti prie default vaizdo
-const updateProduct = (event)=>{
-event.preventDefault();
-
-// Check for duplicates before updating
-const updatedTitle = titleInputElement.value;
-const updatedPrice = +priceInputElement.value;
-const updatedStock = +stockInputElement.value;
-const updatedBrand = brandInputElement.value;
-const updatedCategory = categoryInputElement.value;
-const updatedThumbnail = photoElement.value;
-const updatedRating = +ratingElement.value;
-const updatedDiscountPrecentage = +discountElement.value;
-const updatedDescription = descriptionElement.value;
-
-const duplicateProduct = products.find(
-    (existingProduct) =>
-        existingProduct.id !== currentProduct &&
-        existingProduct.title.toLowerCase() === updatedTitle.toLowerCase() &&
-        existingProduct.price === updatedPrice &&
-        existingProduct.stock === updatedStock &&
-        existingProduct.brand.toLowerCase() === updatedBrand.toLowerCase() &&
-        existingProduct.category === updatedCategory &&
-        existingProduct.thumbnail === updatedThumbnail &&
-        existingProduct.rating === updatedRating &&
-        existingProduct.discountPercentage === updatedDiscountPrecentage &&
-        existingProduct.description === updatedDescription
-);
-
-if (duplicateProduct) {
-    addResult.innerText = `A product with the same details already exists!`;
-    addResult.style.display = 'block';
-    addResult.style.backgroundColor = '#cf7a847f';
-    return;
-}
-
-// Continue with the update if no duplicates found
-// //reiskme bus tokia kokia inpute
-products[currentProduct].title = updatedTitle;
-products[currentProduct].price = updatedPrice;
-products[currentProduct].stock = updatedStock;
-products[currentProduct].brand = updatedBrand;
-products[currentProduct].category = updatedCategory;
-products[currentProduct].thumbnail = updatedThumbnail;
-products[currentProduct].rating = updatedRating;
-products[currentProduct].discountPercentage = updatedDiscountPrecentage;
-products[currentProduct].description = updatedDescription;
-
-// Validations:
-if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
-addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
-addResult.style.display = 'block';
-addResult.style.backgroundColor = '#cf7a847f';
-return;
-} else {
-    addResult.style.display = 'none';
-}
-
-if (updatedCategory == '' || updatedCategory === 'Choose...') {
-    addResult.innerText =  ('Please select a category!');
-    addResult.style.display = 'block';
-    addResult.style.backgroundColor = '#cf7a847f';
-    return;
-} else {
-    addResult.style.display = 'none';
-}
-
-currentProduct = undefined;
-editMode = false; 
-submitButtonElement.onclick = createNewRecord;
-//Pakeisti mygtuko teksta
-submitButtonElement.innerText = 'Submit';
-//kad pakeisti naujo update button spalva (per klase- submitButtonElement.classList.add/remove('btn-primary');
-submitButtonElement.style.backgroundColor = '#6687b3';
-
-// palikti inputus tuscius
-titleInputElement.value = "";
-priceInputElement.value = "";
-stockInputElement.value = "";
-brandInputElement.value = "";
-categoryInputElement.value = "";
-photoElement.value = "";
-ratingElement.value = "";
-discountElement .value = "";
-descriptionElement .value = "";
-
- //Pakeisti alert teksta
-addResult.style.display = 'block';
-addResult.innerText = 'Selected element has been successfully updated!';
-//kad pakeisti spalva
-addResult.style.backgroundColor = '#76cd7e7f';
-
-getTableContents (products);
-};
-
-// Edit state: elemento atnaujinimas. Bus editinamas tam tikras produktas ir jo id yra (id):
+//Edit state:  updating the element. A certain product will be edited and its id is (id):
 const setEdit = (id) => {
-//suradome to produkto indeksa masyve (pagal id)
+//found the index of this product in the array (by id)
 let elementIndex = products.findIndex(value=>value.id === id);
-//gauti pati produkta(jo reiksme). Pagal indeksa susirandame kuris produktas bus redaguojamas
+//get the product itself (its value). By the index we find which product will be edited
 const product = products[elementIndex]; //console.log(product)
-//kad visos reiksmes is pasirinkto produkto atsirastu inpute
+//to make all the values from the selected product appear in the input
 titleInputElement.value = product.title;
 priceInputElement.value = product.price;
 stockInputElement.value = product.stock;
@@ -369,15 +369,16 @@ ratingElement.value = product.rating;
 discountElement.value = product.discountPercentage;
 descriptionElement .value = product.description;
 
-//Pakeisti mygtuko teksta
 submitButtonElement.innerText = 'Update';
-//kad pakeisti naujo update button spalva (per klase-  submitButtonElement.classList.add/remove('btn-primary');
 submitButtonElement.style.backgroundColor = '#6687b3';
-//priskirti mygtukui funkcija
+//assign function to button
 submitButtonElement.onclick = updateProduct;
 
-//elemento pozicija masyva kuria redaguosim
+//element position in array to edit
 currentProduct = elementIndex; 
 
 editMode = true; 
+
+// Scroll to the top of the page
+    window.scrollTo(0, 0);
 };

@@ -9,7 +9,7 @@ const products = [
         stock: 94,
         brand: "Apple",
         category: "smartphones",
-        thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+        thumbnail: "https://images.macrumors.com/t/e0o2RzHJ5cPlD4FgyKQ5jCdSGko=/1600x/article-new/2016/05/iphone8gold.jpg"
       },
       {
         id: 2,
@@ -21,7 +21,7 @@ const products = [
         stock: 34,
         brand: "Apple",
         category: "smartphones",
-        thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+        thumbnail: "https://www.apple.com/newsroom/images/product/iphone/standard/iphonex_front_back_new_glass_full.jpg.og.jpg"
       },
       {
         id: 3,
@@ -33,7 +33,7 @@ const products = [
         stock: 36,
         brand: "Samsung",
         category: "smartphones",
-        thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+        thumbnail: "https://imageio.forbes.com/blogs-images/gordonkelly/files/2018/08/Screenshot-2018-08-10-at-03.58.50.png?height=474&width=711&fit=bounds"
       },
       {
         id: 4,
@@ -45,7 +45,7 @@ const products = [
         stock: 123,
         brand: "OPPO",
         category: "smartphones",
-        thumbnail: "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+        thumbnail: "https://www.notebookcheck.org/uploads/tx_nbc2/OppoF19Pro.JPG"
       },
       {
         id: 5,
@@ -57,7 +57,7 @@ const products = [
         stock: 32,
         brand: "Huawei",
         category: "smartphones",
-        thumbnail: "https://i.dummyjson.com/data/products/5/thumbnail.jpg"
+        thumbnail: "https://m.media-amazon.com/images/I/51zoW2V0QtL._AC_UF894,1000_QL80_.jpg"
       },
       {
         id: 6,
@@ -69,7 +69,7 @@ const products = [
         stock: 83,
         brand: "Apple",
         category: "laptops",
-        thumbnail: "https://i.dummyjson.com/data/products/6/thumbnail.png"
+        thumbnail: "https://files.refurbed.com/ii/apple-macbook-pro-2018-15-4-touc-1653048875.jpg?t=fitdesign&h=600&w=800"
       },
       {
         id: 7,
@@ -81,7 +81,7 @@ const products = [
         stock: 50,
         brand: "Samsung",
         category: "laptops",
-        thumbnail: "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+        thumbnail: "https://www.notebookcheck.org/uploads/tx_nbc2/SamsungGalaxyBookS__1_.jpg"
       },
       {
         id: 8,
@@ -93,7 +93,7 @@ const products = [
         stock: 68,
         brand: "Microsoft Surface",
         category: "laptops",
-        thumbnail: "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+        thumbnail: "https://m.media-amazon.com/images/I/71A1fFf1vOL.jpg"
       },
       {
         id: 9,
@@ -105,7 +105,7 @@ const products = [
         stock: 96,
         brand: "Infinix",
         category: "laptops",
-        thumbnail: "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+        thumbnail: "https://rukminim2.flixcart.com/image/850/1000/kw3v0cw0/computer/y/n/g/inbook-x1-thin-and-light-laptop-infinix-original-imag8vfsgxqzw99a.jpeg?q=90&crop=false"
       },
       {
         id: 10,
@@ -117,7 +117,7 @@ const products = [
         stock: 89,
         brand: "HP Pavilion",
         category: "laptops",
-        thumbnail: "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+        thumbnail: "https://http2.mlstatic.com/D_NQ_NP_653693-MLA48623916867_122021-O.webp"
       },
       {
         id: 11,
@@ -129,7 +129,7 @@ const products = [
         stock: 65,
         brand: "Impression of Acqua Di Gio",
         category: "fragrances",
-        thumbnail: "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+        thumbnail: "https://www.lodoro.cl/cdn/shop/files/1BEILISHN2100M_3.png?v=1705414778"
       },
       {
         id: 12,
@@ -141,7 +141,7 @@ const products = [
         stock: 52,
         brand: "Royal_Mirage",
         category: "fragrances",
-        thumbnail: "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+        thumbnail: "https://i.ebayimg.com/images/g/sMoAAOSwOWNkR6vl/s-l1600.jpg"
       },
       {
         id: 13,
@@ -153,7 +153,7 @@ const products = [
         stock: 61,
         brand: "Fog Scent Xpressio",
         category: "fragrances",
-        thumbnail: "https://i.dummyjson.com/data/products/13/thumbnail.webp"
+        thumbnail: "https://m.media-amazon.com/images/I/51JrMNz6MXL._AC_UF1000,1000_QL80_.jpg"
       },
       {
         id: 14,
@@ -165,7 +165,7 @@ const products = [
         stock: 114,
         brand: "Al Munakh",
         category: "fragrances",
-        thumbnail: "https://i.dummyjson.com/data/products/14/thumbnail.jpg"
+        thumbnail: "https://static-01.daraz.pk/p/ba614f81bdd43a9a3335ac9879020a31.jpg"
       },
       {
         id: 15,
@@ -177,7 +177,7 @@ const products = [
         stock: 105,
         brand: "Lord - Al-Rehab",
         category: "fragrances",
-        thumbnail: "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
+        thumbnail: "https://i5.walmartimages.com/seo/Lord-Al-Rehab-Eau-De-Natural-Perfume-Spray-50-ml-1-65-fl-oz_227a5d50-36c6-42d1-8d86-b969d9c70a6b.04945c8aec66478cdd40ace195283140.png?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
       },
       {
         id: 16,
@@ -189,19 +189,19 @@ const products = [
         stock: 110,
         brand: "L'Oreal Paris",
         category: "skincare",
-        thumbnail: "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
+        thumbnail: "https://static.thcdn.com/images/large/original//productimg/1600/1600/13205087-1714887617452869.jpg"
       },
       {
         id: 17,
         title: "Tree Oil 30ml",
-        description: "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
+        description: "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria",
         price: 12,
         discountPercentage: 4.09,
         rating: 4.52,
         stock: 78,
         brand: "Hemani Tea",
         category: "skincare",
-        thumbnail: "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+        thumbnail: "https://nutravit.co.uk/wp-content/uploads/2023/11/tea-tree-oil.webp"
       },
       {
         id: 18,
@@ -213,7 +213,7 @@ const products = [
         stock: 88,
         brand: "Dermive",
         category: "skincare",
-        thumbnail: "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
+        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2nhCj__hU6yKNanctvRn-2B-jhCvnX6wIjWHfs4sBg&s"
       },
       {
         id: 19,
@@ -225,7 +225,7 @@ const products = [
         stock: 54,
         brand: "ROREC White Rice",
         category: "skincare",
-        thumbnail: "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
+        thumbnail: "https://image.made-in-china.com/202f0j00VmNhUJMRAfrl/15ml-Anti-Aging-Collagen-Hyaluronic-Acid-White-Rice-Serum.webp"
       },
       {
         id: 20,
@@ -237,7 +237,7 @@ const products = [
         stock: 140,
         brand: "Fair & Clear",
         category: "skincare",
-        thumbnail: "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
+        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSq-wyEiwgo_UQq2jPZOFlZaDRteKknj-qRv_ePnVgg&s"
       },
       {
         id: 21,
@@ -249,7 +249,7 @@ const products = [
         stock: 133,
         brand: "Saaf & Khaas",
         category: "groceries",
-        thumbnail: "https://i.dummyjson.com/data/products/21/thumbnail.png"
+        thumbnail: "https://m.media-amazon.com/images/I/61klSHiQ7HL._AC_UF894,1000_QL80_.jpg"
       },
       {
         id: 22,
@@ -261,11 +261,11 @@ const products = [
         stock: 146,
         brand: "Bake Parlor Big",
         category: "groceries",
-        thumbnail: "https://i.dummyjson.com/data/products/22/thumbnail.jpg"
+        thumbnail: "https://nazarjanssupermarket.com/cdn/shop/products/BAKE-PARLOR-BIG-ELBOW-MACARONI-400GM.jpg?v=1680437678"
       },
       {
         id: 23,
-        title: "Orange Essence Food Flavou",
+        title: "Orange Essence Food Flavour",
         description: "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
         price: 14,
         discountPercentage: 8.04,
@@ -273,7 +273,7 @@ const products = [
         stock: 26,
         brand: "Baking Food Items",
         category: "groceries",
-        thumbnail: "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
+        thumbnail: "https://5.imimg.com/data5/SELLER/Default/2021/11/FT/XU/VT/135046750/orange-food-500x500.jpg"
       },
       {
         id: 24,
@@ -285,7 +285,7 @@ const products = [
         stock: 113,
         brand: "fauji",
         category: "groceries",
-        thumbnail: "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
+        thumbnail: "https://images.kglobalservices.com/www.kelloggs.in/en_in/product/product_2501764/prod_img-940291_en_in_08901499010452_2311221300_p_1.png"
       },
       {
         id: 25,
@@ -297,7 +297,7 @@ const products = [
         stock: 47,
         brand: "Dry Rose",
         category: "groceries",
-        thumbnail: "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
+        thumbnail: "https://m.media-amazon.com/images/I/71EEkrB1mrL._AC_UF1000,1000_QL80_.jpg"
       },
       {
         id: 26,
@@ -309,7 +309,7 @@ const products = [
         stock: 131,
         brand: "Boho Decor",
         category: "home-decoration",
-        thumbnail: "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
+        thumbnail: "https://m.media-amazon.com/images/I/61Dnb36XmgL._AC_UF894,1000_QL80_.jpg"
       },
       {
         id: 27,
@@ -321,7 +321,7 @@ const products = [
         stock: 17,
         brand: "Flying Wooden",
         category: "home-decoration",
-        thumbnail: "https://i.dummyjson.com/data/products/27/thumbnail.webp"
+        thumbnail: "https://static-01.daraz.pk/p/0609fb6ae6035c83312a34bb193a4147.jpg_750x750.jpg_.webp"
       },
       {
         id: 28,
@@ -333,7 +333,7 @@ const products = [
         stock: 54,
         brand: "LED Lights",
         category: "home-decoration",
-        thumbnail: "https://i.dummyjson.com/data/products/28/thumbnail.jpg"
+        thumbnail: "https://static-01.daraz.pk/p/3a8fab51307e6bb4982ab3d0f094dcc0.jpg_750x750.jpg_.webp"
       },
       {
         id: 29,
@@ -345,7 +345,7 @@ const products = [
         stock: 7,
         brand: "luxury palace",
         category: "home-decoration",
-        thumbnail: "https://i.dummyjson.com/data/products/29/thumbnail.webp"
+        thumbnail: "https://komarofff-ksenchik-online-store.netlify.app/products/29/1.jpg"
       },
       {
         id: 30,
@@ -357,6 +357,6 @@ const products = [
         stock: 54,
         brand: "Golden",
         category: "home-decoration",
-        thumbnail: "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
+        thumbnail: "https://static-01.daraz.pk/p/66758b63f71b931696020d9d0604725a.jpg_750x750.jpg_.webp"
       }
     ]
