@@ -121,7 +121,7 @@ const showaModal = (id) => {
     modalElement.innerHTML = dynamicHTML;
 
     //Clicking on the background will open the modal window
-    document.querySelector("#modalBody").onclick = (event) => {   //to have two cycles - window/background
+    document.querySelector("#modalBody").onclick = (event) => {  //to have two cycles - window/background
         event.stopPropagation(); //to prevent the transfer of the click to the background 
         console.log("clicked on modal window")
     }
@@ -138,7 +138,7 @@ const createNewRecord = (event) => {
     //event.PreventDefault - to prevent page from reloading (most often used with forms where button type is not specified: buttin,  because then it automatically becomes submit and reloads)
     event.preventDefault(); //console.log (event);
         const newProduct = {
-            id: currentId,  //each new element added will have a higher and higher id depending on the id of the last element (until the modal cration id was: products[products.length - 1].id + 1,)
+            id: currentId, //each new element added will have a higher and higher id depending on the id of the last element (until the modal cration id was: products[products.length - 1].id + 1,)
             title: titleInputElement.value,
             description: descriptionElement.value,
             price: + priceInputElement.value, // + convert to numbers
@@ -354,31 +354,31 @@ const updateProduct = (event)=>{
 
 //Edit state:  updating the element. A certain product will be edited and its id is (id):
 const setEdit = (id) => {
-//found the index of this product in the array (by id)
-let elementIndex = products.findIndex(value=>value.id === id);
-//get the product itself (its value). By the index we find which product will be edited
-const product = products[elementIndex]; //console.log(product)
-//to make all the values from the selected product appear in the input
-titleInputElement.value = product.title;
-priceInputElement.value = product.price;
-stockInputElement.value = product.stock;
-brandInputElement.value = product.brand;
-categoryInputElement.value = product.category;
-photoElement.value = product.thumbnail;
-ratingElement.value = product.rating;
-discountElement.value = product.discountPercentage;
-descriptionElement .value = product.description;
+    //found the index of this product in the array (by id)
+    let elementIndex = products.findIndex(value=>value.id === id);
+    //get the product itself (its value). By the index we find which product will be edited
+    const product = products[elementIndex]; //console.log(product)
+    //to make all the values from the selected product appear in the input
+    titleInputElement.value = product.title;
+    priceInputElement.value = product.price;
+    stockInputElement.value = product.stock;
+    brandInputElement.value = product.brand;
+    categoryInputElement.value = product.category;
+    photoElement.value = product.thumbnail;
+    ratingElement.value = product.rating;
+    discountElement.value = product.discountPercentage;
+    descriptionElement .value = product.description;
 
-submitButtonElement.innerText = 'Update';
-submitButtonElement.style.backgroundColor = '#6687b3';
-//assign function to button
-submitButtonElement.onclick = updateProduct;
+    submitButtonElement.innerText = 'Update';
+    submitButtonElement.style.backgroundColor = '#6687b3';
+    //assign function to button
+    submitButtonElement.onclick = updateProduct;
 
-//element position in array to edit
-currentProduct = elementIndex; 
+    //element position in array to edit
+    currentProduct = elementIndex; 
 
-editMode = true; 
+    editMode = true; 
 
-// Scroll to the top of the page
+    // Scroll to the top of the page
     window.scrollTo(0, 0);
 };
