@@ -9,7 +9,7 @@ const products = [
         stock: 94,
         brand: "Apple",
         category: "smartphones",
-        thumbnail: "https://images.macrumors.com/t/e0o2RzHJ5cPlD4FgyKQ5jCdSGko=/1600x/article-new/2016/05/iphone8gold.jpg"
+        thumbnail: "https://305e50ea.flyingcdn.com/wp-content/uploads/2018/01/iphone8-plus-prateado.jpg"
       },
       {
         id: 2,
@@ -21,7 +21,7 @@ const products = [
         stock: 34,
         brand: "Apple",
         category: "smartphones",
-        thumbnail: "https://www.apple.com/newsroom/images/product/iphone/standard/iphonex_front_back_new_glass_full.jpg.og.jpg"
+        thumbnail: "https://media.istockphoto.com/id/910633906/photo/new-apple-iphone-x-front-view-on-white-background.jpg?s=170667a&w=0&k=20&c=UpyZvqtR6nIGDLViSAoWHkqK3-2fmN6I8T3OccmnnWI="
       },
       {
         id: 3,
@@ -33,7 +33,7 @@ const products = [
         stock: 36,
         brand: "Samsung",
         category: "smartphones",
-        thumbnail: "https://imageio.forbes.com/blogs-images/gordonkelly/files/2018/08/Screenshot-2018-08-10-at-03.58.50.png?height=474&width=711&fit=bounds"
+        thumbnail: "https://www.riitekpro.es/cdn/shop/products/154214_0a804472-8918-4908-a6de-b8396f7773b0_616x616.jpg?v=1654159347"
       },
       {
         id: 4,
@@ -57,7 +57,7 @@ const products = [
         stock: 32,
         brand: "Huawei",
         category: "smartphones",
-        thumbnail: "https://m.media-amazon.com/images/I/51zoW2V0QtL._AC_UF894,1000_QL80_.jpg"
+        thumbnail: "https://i.ebayimg.com/images/g/b0QAAOSwuUNk~hjS/s-l400.jpg"
       },
       {
         id: 6,
@@ -129,7 +129,7 @@ const products = [
         stock: 65,
         brand: "Impression of Acqua Di Gio",
         category: "fragrances",
-        thumbnail: "https://www.lodoro.cl/cdn/shop/files/1BEILISHN2100M_3.png?v=1705414778"
+        thumbnail: "https://i1.perfumesclub.com/grande/194989.jpg"
       },
       {
         id: 12,
@@ -141,7 +141,7 @@ const products = [
         stock: 52,
         brand: "Royal_Mirage",
         category: "fragrances",
-        thumbnail: "https://i.ebayimg.com/images/g/sMoAAOSwOWNkR6vl/s-l1600.jpg"
+        thumbnail: "https://rukminim2.flixcart.com/image/850/1000/ji6b2q80/deodorant/g/y/y/120-sport-eau-de-parfume-for-men-women-120ml-perfume-body-spray-original-imaf6ybxd8q6vsmf.jpeg?q=20&crop=false"
       },
       {
         id: 13,
@@ -213,7 +213,7 @@ const products = [
         stock: 88,
         brand: "Dermive",
         category: "skincare",
-        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2nhCj__hU6yKNanctvRn-2B-jhCvnX6wIjWHfs4sBg&s"
+        thumbnail: "https://www.sale.sensatotrade.com/wp-content/uploads/2024/01/dermiveoilfree-copy.png"
       },
       {
         id: 19,
@@ -237,7 +237,7 @@ const products = [
         stock: 140,
         brand: "Fair & Clear",
         category: "skincare",
-        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSq-wyEiwgo_UQq2jPZOFlZaDRteKknj-qRv_ePnVgg&s"
+        thumbnail: "https://static-01.daraz.pk/p/6773a11221f132edd64aca6730e21b4c.jpg"
       },
       {
         id: 21,
