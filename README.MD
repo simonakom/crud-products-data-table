@@ -1,4 +1,4 @@
-# <span><img src="./images/new-product.png" alt=star style="height: 1em; vertical-align: middle;"></span> Data-table of products
+# <span><img src="./images/new-product.png" alt=products style="height: 1em; vertical-align: middle;"></span> Data-table of products
 
 Responsive CRUD data table created with javascript & bootstrap. Practising "DOM", dynamic addition, update and removal of table elements, filtering function, validations, modal window implementation.
 
